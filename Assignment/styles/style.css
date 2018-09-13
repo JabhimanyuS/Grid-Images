@@ -1,90 +1,94 @@
+.shuffle-section {
+    text-align: center;
+    margin: 30px 0;
+}
+.shuffle-section #shuffleImages {
+    border: none;
+    outline: none;
+    background: #f06428;
+    color: #ffffff;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 #gridLayout {
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
 }
-
 .image-wrapper-section {
     text-align: center;
     margin-bottom: 25px;
 }
-
-.image-flipper {
+.image-wrapper-section .image-flipper {
     -webkit-perspective: 1000;
     -moz-perspective: 1000;
     -o-perspective: 1000;
     perspective: 1000;
 }
-
 .image-section {
     position: relative;
     -webkit-transition: 0.6s;
-	-webkit-transform-style: preserve-3d;
-	-moz-transition: 0.6s;
-	-moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
     -o-transition: 0.6s;
-	-o-transform-style: preserve-3d;
-	transition: 0.6s;
+    -o-transform-style: preserve-3d;
+    transition: 0.4s;
     transform-style: preserve-3d;
 }
-
+.image-section img {
+    transition: 0.4s;
+}
 .image-flipper:hover .image-section {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-
-.image-wrapper-section .delete-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 6px 12px;
-    cursor: pointer;
+.image-flipper:hover .image-section img {
+    opacity: 0;
+    visibility: hidden;
+}
+.image-description .delete-button {
     outline: none;
     border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
     background: #ff3636;
     color: #fff;
     font-size: 16px;
-    border-radius: 4px;
+    cursor: pointer;
 }
-
-.image-wrapper-section .delete-button img {
-    width: 20px;
-    margin-left: 15px;
-}
-
-.image-section img, .image-section .image-description {
-    -webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.image-section img {
+.image-section > img {
     width: 200px;
     height: 200px;
     margin: 10px 15px;
-    border: 1px solid #b3b3b3;
-    z-index: 2;
 }
-
 .image-section .image-description {
     -webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-	position: absolute;
-	top: 0;
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
     left: 0;
     width: 200px;
     height: 200px;
-    margin: 10px 15px;
     background: #efefef;
+    margin: 10px 15px;
+    padding: 0 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+.image-section .image-description span {
+    line-height: 22px;
 }
