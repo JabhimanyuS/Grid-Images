@@ -15,7 +15,7 @@ Array.prototype.shuffle = function() {
     return input;
 }
 
-/* Function for generating images based on config */
+/* Function for generating images grid based on config */
 function generateImages(updateImage) {
     for (var i = 0; i < imageConfig.length; i++) {
         var image = placeholderImage;
